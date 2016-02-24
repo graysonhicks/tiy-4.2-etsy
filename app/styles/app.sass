@@ -4,13 +4,14 @@ $icon-font-path: '../../node_modules/bootstrap-sass/assets/fonts/bootstrap/'
 
 // Import Bootstrap
 @import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap'
-
+@import "_queries"
 $body-background-color: #F5F5F1
 $caption-title-color: #555
 $caption-shop-name-color: #AAA
 $caption-price-color: #111
-
-
+$button-color:  #3cb1cb
+$top-links-color: #0192b5
+// Globals
 *,
 *::before,
 *::after
@@ -27,6 +28,8 @@ img
 .container
   padding: 0px
 
+//Nav
+
 li
   list-style: none
 
@@ -34,14 +37,10 @@ nav
   padding-left: 10%
   padding-right: 10%
 
-.main-content
-  margin-right: 0px
-  margin-left: 9%
-
 .main-top-nav
   height: 80px
   margin-bottom: 0px
-  border-bottom: none
+  border-bottom: 1px solid rgb(225, 227, 223)
   border-radius: 0px
   padding-top: 12px
 
@@ -51,17 +50,108 @@ nav
     font-family: "Graphik Web"
     font-size: 40px
 
+#main-etsy-options
+  background-color: $body-background-color
+  position: relative
+  bottom: 30px
+  vertical-align: baseline
+  li
+    height: 50px
+    &:nth-of-type(3)
+      margin-right: 20px
+      a
+        border: 1px solid $top-links-color
+        border-radius: 6px
+    &:nth-of-type(2)
+      margin-right: 7px
+    a
+      padding: 8px
+      color: $top-links-color
+      font-size: 14px
+      line-height: 16px
+      &:hover
+        text-decoration: underline
+  li:last-of-type
+    padding-left: 13px
+    padding-right: 13px
+    border-left: 1px solid $caption-shop-name-color
+    position: relative
+    bottom: 10px
+    a
+      color: $caption-title-color
+      text-decoration: none
+      span.glyphicon-shopping-cart
+        font-size: 20px
+      p
+        font-size: 12px
+
+#category-nav
+  padding-top: 80px
+  ul
+    margin-left: 12%
+
+.mobile-nav-button
+  margin-right: 10px
+
+// Search Form
+
+.main-search-form
+  max-width: 35%
+  padding-top: 10px
+
+#main-search-field:focus
+  border: 1px solid $button-color
+  outline: none
+  box-shadow: none
+#main-search-field:active
+  border: 1px solid $button-color
+  outline: none
+  box-shadow: none
+
+button.search-button
+  padding-bottom: 7px
+  background-color: $button-color
+  color: white
+  font-weight: bold
+  padding-left: 15px
+  padding-right: 15px
+  &:hover
+    background-color: $button-color
+    color: white
+
+// Main Content
+
+.main-content
+  margin-right: 0px
+  margin-left: 9%
+
+//Search Area
+
 .results-bar,
-.sorting-dropdown
+.sorting-sort-by
   display: inline-block
   font-size: 12px
 
-.sorting-dropdown
-  padding-left: 47%
+.sorting-sort-by
+  padding-left: 45%
+
+.sorting-dropdown-menu
+  display: inline-block
+  a
+    cursor: pointer
+  .caret
+    color: $caption-shop-name-color
 
 .search-results-ul
   display: inline-block
   width: 100%
+
+#searching-panel
+  width: 60%
+  text-align: center
+  margin: 0 auto
+
+// Thumbnails
 
 li.search-image-list-items
   padding-left: 0px
@@ -71,6 +161,7 @@ li.search-image-list-items
 
 .search-image-list-items
   margin-bottom: 20px
+  border: 1px solid rgb(225, 227, 223)
   border-bottom: 1px solid rgb(203, 204, 201)
   border-bottom-left-radius: 3px
   border-bottom-right-radius: 3px
@@ -80,9 +171,6 @@ li.search-image-list-items
   border-image-slice: 100%
   border-image-source: none
   border-image-width: 1
-  border-left: 1px solid rgb(225, 227, 223)
-  border-right: 1px solid rgb(225, 227, 223)
-  border-top: 1px solid rgb(225, 227, 223)
   border-top-left-radius: 3px
   border-top-right-radius: 3px
   img
@@ -130,3 +218,18 @@ a.thumbnail
 
 .caption-price
   color: #78c042
+
+// Sidebar
+
+.desktop-refine-title
+  padding-bottom: 10px
+  font-size: 14px
+
+.mobile-refine-title
+  display: none
+
+#mobile-refine-panel
+  padding: 0px
+  .panel-heading
+    background-color: #f5f5f5
+    border-bottom: 1px solid #ddd
