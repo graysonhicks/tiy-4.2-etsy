@@ -1,11 +1,12 @@
 var $ = require('jquery');
+window.jQuery = $ = require('jquery');
 var _ = require('underscore');
+var bootstrap = require('bootstrap');
 var handlebars = require('handlebars');
-
 
 //AJAX CALL
 
-var url = "https://api.etsy.com/v2/listings/active.js?api_key=2y6e2yglpdqmnn0ve6wz5iib&keywords=tequila&includes=Images,Shop&sort_on=score";
+var url = "https://api.etsy.com/v2/listings/active.js?api_key=2y6e2yglpdqmnn0ve6wz5iib&keywords=bernese+mountain+dog&includes=Images,Shop&sort_on=score";
 
 function fetchJSONP(url, callback) {
     var callbackName = 'jsonp_callback_' + Math.round(100000 * Math.random());

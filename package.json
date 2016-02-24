@@ -4,9 +4,9 @@
     "node": ">=0.10.0"
   },
   "devDependencies": {
-    
+
     "bootstrap-sass": "^3.3.6",
-    
+    "bootstrap": "^3.2.0",
     "git-directory-deploy": "^1.4.0",
     "autoprefixer": "^6.3.3",
     "browserify-shim": "^3.8.12",
