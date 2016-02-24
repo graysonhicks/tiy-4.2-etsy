@@ -9,7 +9,7 @@
   <body>
   <div class="container-fluid">
     <div class="container-fluid">
-      <nav class="navbar navbar-default">
+      <nav class="navbar navbar-default main-top-nav">
         <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
@@ -50,11 +50,14 @@
         </div>
       </nav>
     </div>
-    <div class="container">
-      <div class="col-md-4">
-          <h3>Show results for:</h3>
-          <ul class="">
-            <li>All Categories</li>
+    <div class="container main-content">
+      <div class="col-xs-3">
+        <h5>Show results for:</h5>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">All Categories</h3>
+          </div>
+          <ul class="panel-body">
             <li><a href="#">Clothing & Accessories</a></li>
             <li><a href="#">Jewelry</a></li>
             <li><a href="#">Craft Supplies & Tools</a></li>
@@ -64,26 +67,46 @@
             <li><a href="#">Kids & Baby</a></li>
             <li><a href="#">Vintage</a></li>
           </ul>
-      </div>
-      <div class="col-md-8">
-        <script id="search-header-template" type="text/x-handlebars-template">
-          <h3>All Categories <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span> {{searchTerm}} </span> <span>({{numberOfResults}}) Results</h3>
-          <h3>Sort By: <a href="">Relevancy</a></h3>
-        </script>
-        <script id="search-images-template" type="text/x-handlebars-template">
-          <ul class="list-inline">
-            {{#each resultsArray}}
-            <li class="search-image-list-items">
-              <a href="{{linkUrl}}"><img src="{{imagesUrl}}" alt=""></a>
-              <h5>{{title}}</h5>
-              <span>{{shopname}}</span><span>${{price}}</span>
-            </li>
+        </div>
+        <h5>Refine your search</h5>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Item Type</h3>
+          </div>
+          <ul class="panel-body">
+            <li><a href="#">All Items</a></li>
+            <li><a href="#">Handmade</a></li>
+            <li><a href="#">Vintage</a></li>
           </ul>
-        </script>
+        </div>
+      </div>
+      <div class="col-xs-9 search-area">
+
       </div>
     </div>
   </div>
+      <script id="search-header-template" type="text/x-handlebars-template">
+        <div class="fluid-container">
+          <h3 class="results-bar">All Categories <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span> {{searchTerm}} </span> <span>({{numberOfResults}} Results)</h3>
+          <h3 class="sorting-dropdown">Sort By: <a href="">Relevancy</a></h3>
+        </div>
+      </script>
+      <script id="search-images-template" type="text/x-handlebars-template">
+        <div class="fluid-container">
+          <ul class="search-results-ul list-inline">
+            {{#each results}}
+            <li class="search-image-list-items">
+              <a class="thumbnail" href="{{url}}"><img src="{{Images.0.url_570xN}}" alt=""></a>
+              <div class="caption">
+                <p><a class="caption-title" href="">{{title}}</a></p>
+                <p><a class="caption-shop-name" href="">{{Shop.shop_name}}</a><span class="caption-price pull-right">${{price}}</span></p>
+              </div>
+            </li>
+            {{/each}}
+          </ul>
+        </div>
+      </script>
     <script src="js/bundle.js"></script>
   </body>
 </html>

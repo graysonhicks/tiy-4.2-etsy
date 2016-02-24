@@ -20,8 +20,7 @@ function fetchJSONP(url, callback) {
 }
 
 function logData(data) {
-  var tequila = data;
-  console.log(tequila);
+  console.log(data);
   buildTemplates(data);
 }
 
@@ -38,28 +37,20 @@ function buildTemplates(data){
   var searchHeaderTemplate = handlebars.compile(searchHeaderSource);
   var searchHeaderRenderedTemplate = searchHeaderTemplate(
     {
-    "numberOfResults": numberOfResults,
-    "searchTerm": searchTerm
-  }
+      "numberOfResults": numberOfResults,
+     "searchTerm": searchTerm}
   );
 
-  $('.container').html(searchHeaderRenderedTemplate);
+  $('.search-area').html(searchHeaderRenderedTemplate);
 
   var resultsArray = data["results"];
   console.log(resultsArray[0].price);
 
   var searchImagesSource = $("#search-images-template").html();
   var searchImagesTemplate = handlebars.compile(searchImagesSource);
-  var searchImagesRenderedTemplate = searchImagesTemplate(
-    {
-      "title": resultsArray[0].title,
-      "linkUrl": resultsArray[0].url,
-      "imagesUrl": resultsArray[0].Images[0].url_170x135,
-      "shopname": resultsArray[0].Shop.shop_name,
-      "price": resultsArray[0].price
-  }
-  );
+  var searchImagesRenderedTemplate = searchImagesTemplate({"results": resultsArray});
 
-    $('.container').html(searchImagesRenderedTemplate);
+
+    $('.search-area').append(searchImagesRenderedTemplate);
 
   };

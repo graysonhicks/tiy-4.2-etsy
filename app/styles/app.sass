@@ -5,11 +5,20 @@ $icon-font-path: '../../node_modules/bootstrap-sass/assets/fonts/bootstrap/'
 // Import Bootstrap
 @import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap'
 
+$body-background-color: #F5F5F1
+$caption-title-color: #555
+$caption-shop-name-color: #AAA
+$caption-price-color: #111
+
 
 *,
 *::before,
 *::after
   box-sizing: border-box
+
+
+body
+  background-color: $body-background-color
 
 img
   max-width: 100%
@@ -25,8 +34,99 @@ nav
   padding-left: 10%
   padding-right: 10%
 
+.main-content
+  margin-right: 0px
+  margin-left: 9%
+
+.main-top-nav
+  height: 80px
+  margin-bottom: 0px
+  border-bottom: none
+  border-radius: 0px
+  padding-top: 12px
+
+.navbar-default
+  .navbar-brand
+    color: #f45800
+    font-family: "Graphik Web"
+    font-size: 40px
+
+.results-bar,
+.sorting-dropdown
+  display: inline-block
+  font-size: 12px
+
+.sorting-dropdown
+  padding-left: 47%
+
+.search-results-ul
+  display: inline-block
+  width: 100%
+
+li.search-image-list-items
+  padding-left: 0px
+  padding-right: 0px
+  max-width: 225px
+  margin: 9px
+
 .search-image-list-items
   margin-bottom: 20px
-  border: 1px solid black
-  border-bottom-left-radius: 10px
-  border-bottom-right-radius: 10px
+  border-bottom: 1px solid rgb(203, 204, 201)
+  border-bottom-left-radius: 3px
+  border-bottom-right-radius: 3px
+  border-collapse: separate
+  border-image-outset: 0px
+  border-image-repeat: stretch
+  border-image-slice: 100%
+  border-image-source: none
+  border-image-width: 1
+  border-left: 1px solid rgb(225, 227, 223)
+  border-right: 1px solid rgb(225, 227, 223)
+  border-top: 1px solid rgb(225, 227, 223)
+  border-top-left-radius: 3px
+  border-top-right-radius: 3px
+  img
+    height: 180px
+    width: 225px
+  p
+    margin-bottom: 0px
+
+.thumbnail
+  border: none
+
+a.thumbnail
+  padding: 0px
+  border: none
+  margin: 0
+  &:hover
+    border: none
+    text-decoration: none
+
+.caption
+  text-decoration: none
+  height: 50px
+  max-width: 250px
+  font-size: 12px
+  padding: 5px
+  p
+    padding-top: 3px
+  p:first-of-type
+    display: inline-block
+    max-width: 90%
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+
+.caption-title
+  color: $caption-title-color
+  &:hover
+    color: $caption-title-color
+    text-decoration: none
+
+.caption-shop-name
+  color: $caption-shop-name-color
+  &:hover
+    color: $caption-shop-name-color
+
+.caption-price
+  color: #78c042
