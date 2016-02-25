@@ -77,14 +77,29 @@
             <h3 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#mobile-refine-panel" aria-expanded="false" aria-controls="#mobile-refine-panel">Refine your search</a></h3>
           </div>
           <div class="panel-body collapse in" id="mobile-refine-panel">
-            <div class="panel-heading">
-              <h3 class="panel-title">Item Type</h3>
+            <div class="handmade-vintage-filter-panel">
+              <div class="panel-heading">
+                <h3 class="panel-title">Item Type</h3>
+              </div>
+              <ul class="panel-body btn-group" data-toggle="buttons">
+                  <li class="all-items-filter"><label class="btn"><input type="radio" autocomplete="off">All Items</label></li>
+                  <li class="handmade-filter"><label class="btn"><input type="radio" autocomplete="off">Hand Made</label></li>
+                  <li class="vintage-filter"><label class="btn"><input type="radio" autocomplete="off">Vintage</label></li>
+              </ul>
             </div>
-            <ul class="panel-body">
-              <li><a href="#">All Items</a></li>
-              <li><a href="#">Handmade</a></li>
-              <li><a href="#">Vintage</a></li>
-            </ul>
+            <div class="price-filter-panel">
+              <div class="panel-heading">
+                <h3 class="panel-title">Price ($)</h3>
+              </div>
+              <div class="panel-body input-group price-filter-input-group">
+                <input type="text" class="form-control" id="low-price-input" placeholder="Low">
+                <p class="price-filter-to">to</p>
+                <input type="text" class="form-control" id="high-price-input" placeholder="High">
+                <span class="input-group-btn">
+                  <button class="btn btn-default" id="price-filter-button" type="button"><span class="glyphicon glyphicon-play" aria-hidden="true"></span></button>
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -104,9 +119,10 @@
               <span class="caret"></span>
             </a>
             <ul class="dropdown-menu" aria-labelledby="dLabel">
-              <li class="price-sorter"><a href="">Price</a></li>
-              <li class="rating-sorter"><a href="">Rating</a></li>
-              <li class="views-sorter"><a href="">Views</a></li>
+              <li class="price-sorter-high"><a href="">Price (Highest First)</a></li>
+              <li class="price-sorter-low"><a href="">Price (Lowest First)</a></li>
+              <li class="date-sorter"><a href="">Date</a></li>
+              <li class="relevance-sorter"><a href="">Relevance</a></li>
             </ul>
           </div>
         </div>
